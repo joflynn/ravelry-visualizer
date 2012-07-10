@@ -1,0 +1,16 @@
+= form_for @visualize do |f|
+  -if @visualize.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@visualize.errors.count, "error")} prohibited this visualize from being saved:"
+      %ul
+        - @visualize.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :index
+    = f.text_field :index
+  .field
+    = f.label :show
+    = f.text_field :show
+  .actions
+    = f.submit 'Save'

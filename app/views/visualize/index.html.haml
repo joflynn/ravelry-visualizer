@@ -1,0 +1,21 @@
+%h1 Listing visualizes
+
+%table
+  %tr
+    %th Index
+    %th Show
+    %th
+    %th
+    %th
+
+  - @visualizes.each do |visualize|
+    %tr
+      %td= visualize.index
+      %td= visualize.show
+      %td= link_to 'Show', visualize
+      %td= link_to 'Edit', edit_visualize_path(visualize)
+      %td= link_to 'Destroy', visualize, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Visualize', new_visualize_path
