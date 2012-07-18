@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title
+      = yield :title
+    %link{ :href => 'http://fonts.googleapis.com/css?family=Pontano+Sans|Ribeye+Marrow', :rel => 'stylesheet', :type => 'text/css'}
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = javascript_include_tag "slide-outs.js"
+    = csrf_meta_tag
+  %body
+    #content
+      = yield 
+    #hook.slide-out
+      %img{:src => "/hook.png", :alt => "Crochet Hook"}
+    #needles.slide-out
+      %img{:src => "/needles.png", :alt => "Knitting Needles"}
+    #balls
+      = yield :balls
+    %footer
+      %div
+        = link_to "Home", "/"
+        = link_to "Try it", new_account_path
+        = link_to "About", page_path("about")
+        = link_to "Source", "#"
+        = link_to "Résumé", "#"

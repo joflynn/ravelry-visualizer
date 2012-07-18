@@ -1,0 +1,57 @@
+- pr = account.pronouns
+%section#stats
+  %header
+    %h1 #{pr[:my].capitalize} Stats
+  - s = statistics(account.data)
+
+  %p
+    - unless s[:gifts].nil?
+      %span#gifts
+        - total = s[:gifts][:blank] + s[:gifts][:self] + s[:gifts][:others]
+        - if s[:gifts][:blank] > s[:gifts][:self] + s[:gifts][:others]
+          #{pr[:i]} don't fill out who #{pr[:my]} projects are made for very often
+          %small> (#{s[:gifts][:blank]})
+          \.
+
+        - if s[:gifts][:self] > s[:gifts][:others]
+          Most 
+          %small (#{s[:gifts][:self]} / #{total})
+          of #{pr[:my]} projects were made for #{pr[:myself]}.
+        - else
+          Most
+          %small (#{s[:gifts][:others]} / #{total})
+          of #{pr[:my]} projects were made for others.
+
+        - if s[:gifts][:names].length > 4
+          #{pr[:i].capitalize} have given projects to several
+          %small (#{s[:gifts][:names].length})
+          different people.
+
+        - if s[:gifts][:names].reject{|k,v| v < 2}.length > 3
+          And, #{pr[:i]} give to the same people often.  
+          #{pr[:my]} most frequent recipients are
+          = s[:gifts][:names].sort{|a,b| b[1] <=> a[1]}.first(3).collect{|p| p[0] }.to_sentence + "."
+
+    - unless s[:conversational].nil?
+      %span#conversational.prefixed
+        #{pr[:my].capitalize}
+        = render :partial => "project", :object => s[:conversational]
+        has the most comments
+        %small> (#{s[:conversational]["comments"]})
+        \.
+
+    - unless s[:favorite].nil?
+      %span#favorited.prefixed
+        = render :partial => "project", :object => s[:favorite]
+        is #{pr[:my]} most favorited project
+        %small> (#{s[:favorite]["favorited"]})
+        \.
+
+    - unless s[:happiness].nil?
+      - mode = s[:happiness].rindex(s[:happiness].max)
+      %span#happiness-mode{:class => "prefixed #{s[:names][mode]}"}
+        %em= s[:names][mode].capitalize
+        is #{pr[:my]} most common happiness rating.
+
+  - unless s[:happiness].nil?
+    = render :partial => "happiness", :locals => s

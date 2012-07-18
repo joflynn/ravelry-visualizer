@@ -1,0 +1,34 @@
+- pr = account.pronouns
+%section#tools
+  %header
+    %h1 Tools #{pr[:i].capitalize} Use
+  - t = tools(account.data)
+
+  #needle-collection
+    %span Here are the needles #{pr[:i]} used on my projects:
+    - t[:needles].sort{|a,b| a[0]<=>b[0]}.each do |metric, needle|
+      #needle
+        %img.needle{:src => "/dpn-#{(metric * 100).to_i}.png", :alt => needle["name"], :title => needle["name"]}
+
+  %p
+    - unless t[:blank_ratio].nil?
+      - if t[:blank_ratio] > 0.20
+        #{pr[:i].capitalize} don't enter #{pr[:my]} needle sizes 
+        %small #{(t[:blank_ratio] * 100).to_i}% 
+        of the time. But,
+    - unless t[:favorites].nil? or t[:needles].nil?
+      #{pr[:my].capitalize} most commonly used needles are:
+      %ol
+        - t[:favorites].each do |(metric, freq)|
+          %li
+            = t[:needles][metric]["name"]
+            %small (#{freq} projects)
+
+
+
+    -#needle-collection
+      - [50,75,100,125,150,175,200,225,250,275,300,325,350,375,400,450,500,550,600,650,700,750,800,900,1000,1275,1500,1900,2500].each do |x|
+        #needle
+          %span= x
+          %img.needle{:src => "/dpn-#{x}.png"}
+

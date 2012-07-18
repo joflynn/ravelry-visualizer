@@ -1,0 +1,18 @@
+- max = happiness.max_by{|r| r.length}.length
+
+%table#happiness
+  %tbody
+    %tr.bars
+      - (0..4).each do |col|
+        %td
+          = happiness[col].length
+          %div.bar{:style => "height: #{(happiness[col].length / max.to_f * 200.0)}px" }
+
+  %tfoot
+    %tr
+      - (0..4).each do |col|
+        %th
+          %img{:src => emoticon_format % names[col].to_s, :title => happiness[col].join(", ") }
+    %tr
+      %th{:colspan => 5}
+        %h2 Happiness

@@ -1,5 +1,9 @@
-%h1 New account
+%h1 Try it
+%p
+  Just enter your Ravelry username and api key and you can see your data.
 
 = render 'form'
 
-= link_to 'Back', accounts_path
+
+- content_for :title do 
+  Signup

@@ -1,0 +1,94 @@
+body {
+  background-color: #dbf0d5;
+  margin: 0; }
+
+#content {
+  width: 650px;
+  margin: 120px auto 60px;
+  padding: 0 25px 30px;
+  border-width: 5px 5px 0 5px;
+  border-style: solid;
+  border-color: #d3d3d3;
+  border-radius: 20px 20px 0 0;
+  background-color: white;
+  opacity: 0.9;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.75);
+  z-index: 10;
+  position: relative;
+  min-height: 450px; }
+
+body > footer {
+  position: fixed;
+  height: 90px;
+  z-index: 20;
+  bottom: 0;
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+  background-image: url(/scallop.png);
+  background-repeat: repeat-x;
+  background-position: top; }
+  body > footer > div {
+    margin-top: 40px;
+    background-color: #c2ebb1; }
+  body > footer div {
+    padding: 0 1em 2em; }
+    body > footer div a {
+      margin: 0 1em; }
+    body > footer div a {
+      margin: 0 1em;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      body > footer div a:hover {
+        font-size: larger; }
+
+.slide-out {
+  position: fixed;
+  width: 650px;
+  height: 500px;
+  top: 0;
+  left: 50%;
+  z-index: 5; }
+  .slide-out img {
+    margin-left: -50%; }
+
+#balls {
+  position: fixed;
+  z-index: 7;
+  bottom: 20px; }
+  #balls .ball {
+    position: absolute; }
+
+.ball.small {
+  width: 80px; }
+
+.ball.medium {
+  width: 90px; }
+
+.ball.large {
+  width: 105px; }
+
+.field, .actions {
+  margin: 1em 2em; }
+  .field label, .actions label {
+    display: block; }
+  .field input, .actions input {
+    font-size: large; }
+
+.centered-badge {
+  margin: 1em auto;
+  text-align: center; }
+
+aside.boxed {
+  float: right;
+  width: 150px;
+  font-size: 10px;
+  background-color: white;
+  margin-top: 20px;
+  margin-right: -100px;
+  padding: 1em;
+  border: 5px solid #d3d3d3;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25); }

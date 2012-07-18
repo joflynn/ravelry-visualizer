@@ -10,11 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120710061042) do
+ActiveRecord::Schema.define(:version => 20120710123847) do
 
   create_table "accounts", :force => true do |t|
     t.string   "username"
     t.string   "api_key"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "slug"
+    t.string   "title"
+    t.text     "body"
+    t.string   "visibility"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,0 +1,26 @@
+- pr = account.pronouns
+%section#yarn
+  %header
+    %h1 Yarn
+  - y = yarn(account.data)
+
+  %p
+
+    - unless y[:blank_ratio].nil?
+      - if y[:blank_ratio] > 0.10
+        %small #{(y[:blank_ratio] * 100).round}%
+        of #{pr[:my]} projects are missing their yarn.
+        - if y[:blank_ratio] > 0.20
+          #{pr[:i].capitalize} should probably be more thorough.
+    
+    - unless y[:favorite_brands].nil?
+      #{pr[:my].capitalize} most commonly used brands are:
+      #{y[:favorite_brands].collect{|(brand,freq)| link_to(brand, y[:brands][brand]["url"])}.to_sentence.html_safe}.
+
+    - unless y[:favorite_yarn].nil?
+      #{pr[:my].capitalize} most frequently used yarn is 
+      - favorite =  y[:yarns][y[:favorite_yarn][0]]
+      = link_to favorite["name"], favorite["url"]
+      by #{ favorite["brand"]}.
+      #{pr[:i].capitalize} used it on #{pluralize(y[:favorite_yarn][1], "project")}.
+      

@@ -1,0 +1,27 @@
+body {
+  font-family: "Pontano Sans", sans-serif;
+  font-size: 150%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Ribeye Marrow", cursive;
+  font-weight: normal; }
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted gray; }
+
+header {
+  text-align: center; }
+  header p {
+    margin-top: 0;
+    font-family: "Ribeye Marrow", cursive; }
+
+#error_explanation {
+  border: 1px solid red;
+  background-color: pink;
+  padding-left: 1em; }
+  #error_explanation h2 {
+    font-size: 20px;
+    margin-bottom: 0; }
+  #error_explanation ul {
+    margin-top: 0; }

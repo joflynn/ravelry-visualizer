@@ -10,7 +10,14 @@
     = f.label :username
     = f.text_field :username
   .field
-    = f.label :api_key
-    = f.text_field :api_key
+    = f.label :api_key 
+    = f.text_field :api_key, :size => 40
+    %div
+      %small
+        %em
+          This is not your password, you can get yours
+          = link_to "here", "http://www.ravelry.com/help/api"
   .actions
     = f.submit 'Save'
+
+  %br

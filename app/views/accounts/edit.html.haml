@@ -1,7 +1,23 @@
 %h1 Editing account
 
-= render 'form'
+- @account.api_key = ""
+= form_for @account do |f|
+  -if @account.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@account.errors.count, "error")} prohibited this account from being saved:"
+      %ul
+        - @account.errors.full_messages.each do |msg|
+          %li= msg
+  = hidden_field :delete, :confirm, :value => 1
+  .field
+    = f.label :api_key 
+    = f.text_field :api_key, :size => 40
+    %div
+      %small
+        %em
+          Please provide again to confirm, it is available 
+          = link_to "here", "http://www.ravelry.com/help/api"
+  .actions
+    = f.submit 'Delete'
 
-= link_to 'Show', @account
-\|
-= link_to 'Back', accounts_path
+

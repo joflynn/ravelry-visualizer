@@ -1,0 +1,22 @@
+- start, fin = yearly.minmax_by{|pair| pair[0]}.collect{|x| x[0]}
+- max = yearly.max_by{|pair| pair[1].length}[1].length
+
+%table#yearly_speed
+  %tbody
+    %tr.bars
+      - (start..fin).each do |year|
+        %td
+          = yearly[year].length or 0
+
+          - height = 0
+          - height = (yearly[year].length / max.to_f * 200.0) unless yearly[year].nil?
+          %div.bar{:style => "height: #{height}px" }
+
+  %tfoot
+    %tr
+      - (start..fin).each do |year|
+        %th
+          = year
+    %tr
+      %th{:colspan => (fin - start)}
+        %h2 Projects / Year

@@ -1,0 +1,121 @@
+$darker_green: #C2EBB1
+$lighter_green: #DBF0D5
+$grey: #D3D3D3
+
+body
+  background-color: $lighter_green
+  margin: 0
+
+#content
+  width: 650px
+  margin: 120px auto 60px
+  padding: 0 25px 30px
+  border: 
+    width: 5px 5px 0 5px 
+    style: solid 
+    color: $grey
+  border-radius: 20px 20px 0 0 
+  background-color: white
+  opacity: 0.9
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.75)
+  z-index: 10
+  position: relative
+  min-height: 450px
+
+
+body > footer
+  position: fixed
+  height: 90px
+  z-index: 20
+  bottom: 0
+  width: 100%
+  padding-top: 40px
+  text-align: center
+  background:
+
+    image: url(/scallop.png)
+    repeat: repeat-x
+    position: top
+  
+  > div 
+    margin-top: 40px
+    background-color: $darker-green
+  
+  div
+    padding: 0 1em 2em
+    
+    a
+      margin: 0 1em
+    a
+      margin: 0 1em
+
+      -webkit-transition: all 0.3s ease
+      -moz-transition: all 0.3s ease
+      -ms-transition: all 0.3s ease
+      -o-transition: all 0.3s ease
+      transition: all 0.3s ease
+
+      &:hover
+        font-size: larger
+
+.slide-out
+  position: fixed
+  width: 650px
+  height: 500px
+  top: 0
+  left: 50%
+  z-index: 5
+
+  img 
+    margin-left: -50%
+
+#balls
+  position: fixed
+  z-index: 7 
+  bottom: 20px
+
+  .ball
+    position: absolute
+  
+.ball.small 
+  width: 80px
+
+.ball.medium
+  width: 90px
+
+.ball.large
+  width: 105px
+
+.field, .actions
+  margin: 1em 2em
+
+  label
+    display: block
+
+  input
+    font-size: large
+
+
+.centered-badge
+  margin: 1em auto
+  text-align: center
+
+aside.boxed
+  float: right
+  width: 150px
+  font-size: 10px
+  background-color: white
+  margin-top: 20px
+  margin-right: -100px   
+  padding: 1em
+  border: 5px solid rgb(211, 211, 211)
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25)
+
+
+  
+
+
+
+
+
+

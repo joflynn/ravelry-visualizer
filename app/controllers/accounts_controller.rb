@@ -10,17 +10,6 @@ class AccountsController < ApplicationController
     end
   end
 
-  # GET /accounts/1
-  # GET /accounts/1.json
-  def show
-    @account = Account.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render :json => @account }
-    end
-  end
-
   # GET /accounts/new
   # GET /accounts/new.json
   def new
@@ -44,7 +33,7 @@ class AccountsController < ApplicationController
 
     respond_to do |format|
       if @account.save
-        format.html { redirect_to @account, :notice => 'Account was successfully created.' }
+        format.html { redirect_to visualize_path(@account.username), :notice => 'Account was successfully created.' }
         format.json { render :json => @account, :status => :created, :location => @account }
       else
         format.html { render :action => "new" }
@@ -57,12 +46,14 @@ class AccountsController < ApplicationController
   # PUT /accounts/1.json
   def update
     @account = Account.find(params[:id])
+    
+    # :( broke rest here, used the update for delete, because I am requiring input for delete
 
-    respond_to do |format|
-      if @account.update_attributes(params[:account])
-        format.html { redirect_to @account, :notice => 'Account was successfully updated.' }
-        format.json { head :no_content }
-      else
+    if params[:delete][:confirm]  and params[:account][:api_key] == @account.api_key
+      destroy
+    else
+      respond_to do |format|
+        @account.invalid_api_key
         format.html { render :action => "edit" }
         format.json { render :json => @account.errors, :status => :unprocessable_entity }
       end

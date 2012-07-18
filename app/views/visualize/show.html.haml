@@ -1,2 +1,23 @@
-%section#account
-  = @account.download.inspect
+- content_for :title do
+  = @account.username
+%header
+  %h1= @account.username
+  %p A summary of Ravelry project data
+
+- ["stats", "tools", "yarn", "speed"].each do |section|
+  %hr
+  = render :partial => section, :locals => {:account => @account} 
+
+- if @account.visitor?
+  %hr 
+  #unsubscribe
+    %small
+      That's cool, but could you please
+      = link_to "delete my information", edit_account_path(@account)
+      now?
+%br
+  
+- content_for :balls do 
+  - Ball.generate(130).each do |ball|
+    = ball
+

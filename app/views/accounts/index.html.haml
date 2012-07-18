@@ -1,9 +1,9 @@
-%h1 Listing accounts
+%header
+  %h1 Accounts
 
 %table
   %tr
     %th Username
-    %th Api key
     %th
     %th
     %th
@@ -11,10 +11,9 @@
   - @accounts.each do |account|
     %tr
       %td= account.username
-      %td= account.api_key
-      %td= link_to 'Show', account
-      %td= link_to 'Edit', edit_account_path(account)
-      %td= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Show', visualize_path(account.username)
+      %td= link_to 'Delete', edit_account_path(account)
+      -#%td= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete
 
 %br
 

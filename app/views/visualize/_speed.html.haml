@@ -1,0 +1,22 @@
+- pr = account.pronouns
+%section#speed
+  %header
+    %h1 Over Time&hellip;
+  - s = speed(account.data)
+
+  %p
+    - if s[:short] > s[:long]
+      #{pr[:i].capitalize} complete most of #{pr[:my]} projects in less than three months.
+    - else
+      #{pr[:i].capitalize} take longer than three months to complete most of #{pr[:my]} projects.
+
+    - if s[:seasons]
+      - if s[:seasons][:same]
+        #{pr[:i].capitalize} tend to knit/crochet projects in the #{s[:seasons][:started].to_sentence}.
+      - else
+        #{pr[:i].capitalize} tend to start projects in the #{s[:seasons][:started].to_sentence}
+        and complete them in the #{s[:seasons][:completed].to_sentence}.
+
+  - unless s[:yearly].nil?
+    = render :partial => "yearly", :locals => s
+       

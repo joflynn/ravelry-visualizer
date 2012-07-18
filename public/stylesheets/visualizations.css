@@ -1,0 +1,102 @@
+.project {
+  position: relative;
+  display: inline-block; }
+  .project a {
+    text-decoration: none;
+    border-bottom: 1px dotted gray; }
+    .project a span {
+      background-color: white;
+      display: none; }
+      .project a span img {
+        border: none; }
+    .project a:hover span, .project a.hover span {
+      display: inline-block;
+      border: 1px solid gray;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+      padding: 0.5em;
+      text-align: center;
+      position: absolute;
+      top: 25px;
+      left: 0px;
+      width: 75px;
+      z-index: 12;
+      -webkit-transform: rotate(-3deg);
+      -moz-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+      -o-transform: rotate(-3deg);
+      transform: rotate(-3deg); }
+      .project a:hover span img, .project a.hover span img {
+        position: relative; }
+
+span.prefixed {
+  background-repeat: no-repeat;
+  background-position: 4px center;
+  padding-left: 24px; }
+
+span#favorited {
+  background-repeat: no-repeat;
+  background-position: 4px center;
+  padding-left: 24px;
+  background-image: url("http://style1.ravelrycache.com/images/silk-heart.png"); }
+
+span#conversational {
+  background-repeat: no-repeat;
+  background-position: 4px center;
+  padding-left: 24px;
+  background-image: url("http://style0.ravelrycache.com/images/silk-comment.png"); }
+
+span#happiness-mode {
+  background-repeat: no-repeat;
+  background-position: 4px center;
+  padding-left: 24px; }
+  span#happiness-mode.loser {
+    background-image: url("http://ravelry.com/images/emoticon_loser.png"); }
+  span#happiness-mode.unhappy {
+    background-image: url("http://ravelry.com/images/emoticon_unhappy.png"); }
+  span#happiness-mode.meh {
+    background-image: url("http://ravelry.com/images/emoticon_meh.png"); }
+  span#happiness-mode.smile {
+    background-image: url("http://ravelry.com/images/emoticon_smile.png"); }
+  span#happiness-mode.grin {
+    background-image: url("http://ravelry.com/images/emoticon_grin.png"); }
+
+table#happiness,
+table#yearly_speed {
+  width: 300px;
+  margin: 0 auto; }
+  table#happiness tr.bars,
+  table#yearly_speed tr.bars {
+    height: 200px; }
+    table#happiness tr.bars td,
+    table#yearly_speed tr.bars td {
+      vertical-align: bottom;
+      text-align: center;
+      font-style: italic;
+      font-size: smaller; }
+      table#happiness tr.bars td div,
+      table#yearly_speed tr.bars td div {
+        background-color: lightgreen;
+        border: 1px solid green;
+        width: 60px; }
+  table#happiness th,
+  table#yearly_speed th {
+    font-weight: normal;
+    font-size: smaller; }
+    table#happiness th h2,
+    table#yearly_speed th h2 {
+      margin-top: 0;
+      text-align: center; }
+
+#needle-collection {
+  z-index: 15;
+  margin: 0 -150px; }
+  #needle-collection span {
+    display: block;
+    text-align: center; }
+  #needle-collection img.needle {
+    z-index: 20; }
+
+#unsubscribe {
+  text-align: right; }
+  #unsubscribe small {
+    font-size: 12px; }

@@ -1,6 +1,16 @@
 RavelryVisualizer::Application.routes.draw do
+
   resources :accounts
-  resources :visualize
+  resources :visualize, :only => [:index, :show]
+
+
+  if Rails.env.development?
+    resources :pages 
+  else
+    resources :pages, :only => [:show]
+  end
+
+  root :to => "Visualize#show", :id => "joeshmo"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
