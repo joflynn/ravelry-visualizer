@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+Account.create({:username => "joeshmo", :api_key => "a142b5287b481afcf813408b7352483488e56191"})
+

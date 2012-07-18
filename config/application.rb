@@ -42,5 +42,5 @@ module RavelryVisualizer
   end
 end
 
-require 'date.rb'
-require 'array.rb'
+require "#{config.root}/lib/date.rb"
+require "#{config.root}/lib/array.rb"
