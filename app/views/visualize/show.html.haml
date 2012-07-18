@@ -1,7 +1,7 @@
 - content_for :title do
   = @account.username
 %header
-  %h1= @account.username
+  %h1= link_to @account.username, @account.data["user"]["url"]
   %p A summary of Ravelry project data
 
 - ["stats", "tools", "yarn", "speed"].each do |section|

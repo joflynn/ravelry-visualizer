@@ -1,6 +1,8 @@
 - content_for :title do
   = @page.title
 
+%header
+  %h1= @page.title
 %article{:id => @page.slug}
   = @page.body.html_safe
 

@@ -6,10 +6,10 @@ body {
   width: 650px;
   margin: 120px auto 60px;
   padding: 0 25px 30px;
-  border-width: 5px 5px 0 5px;
+  border-width: 5px;
   border-style: solid;
   border-color: #d3d3d3;
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
   background-color: white;
   opacity: 0.9;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.75);
