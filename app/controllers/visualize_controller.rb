@@ -14,7 +14,7 @@ class VisualizeController < ApplicationController
   # GET /visualizes/1.json
   def show
     @account = Account.find_by_username(params[:id])
-
+p @account
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @account }
