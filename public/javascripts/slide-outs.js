@@ -27,16 +27,5 @@ function handle_scroll(e)
   $(hook).css("left", center + scroll * sin54).css("top", scroll * cos54);
   $(needles).css("left", center - scroll * sin54).css("top", scroll * cos54);
 
-
-  if ( false && scroll > 300 && ! dropped ) 
-  {
-    dropped = true;
-    var count = 0;
-    while ( count <= 30 )
-    {
-      drop_ball();
-      count += 1;
-    }
-  } 
 }
 
