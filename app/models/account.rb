@@ -44,7 +44,11 @@ p @data
   end
   protected
 
+  #disabled caching.  Heroku does not seem to want me writing files in /tmp
+
   def load_cache
+    return false
+
     if File.exists?(cache_filename)
       File.open(cache_filename, "r") do |f|
         save_date = f.readline.to_datetime
@@ -56,6 +60,8 @@ p @data
   end
 
   def save_cache
+    return false
+
     unless @data.nil?
       File.open(cache_filename, "w") do |f|
         f.puts(DateTime.now)
