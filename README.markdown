@@ -1,4 +1,5 @@
-== Ravelry Visualizer
+Ravelry Visualizer
+====================
 
 This simple application uses Ravelry's Project Progress API to show some, I hope, interesting information culled from a user's project feed.  I wrote it with `rails 3.2.6`, it is hosted for free by [Heroku](http://www.heroku.com "Heroku | Cloud Application Platform").  It uses the `json`, and `rest-client` gems to pull the data. The data is cached locally to minimize requests. It uses `haml-rails` for all the views, and `sass-rails` for all the stylesheets. [Google Web Fonts](http://www.google.com/webfonts/ "Ribeye Marrow, and Pontano Sans") provided the fonts.
 
